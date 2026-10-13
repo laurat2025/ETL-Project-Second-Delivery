@@ -17,3 +17,24 @@ Se integró una suite automatizada en el pipeline de Airflow que verifica obliga
 
 ## 5. Hallazgos del EDA, Asociación Estadística y Reporte Integrado
 En reemplazo de gráficos aislados, se estructuró un reporte analítico consolidado que incluye pruebas formales de asociación categórica mediante la **V de Cramér**, demostrando dependencia estadística significativa entre las comunas de Cali y la severidad de los incidentes viales.
+
+
+## 5. Hallazgos del EDA, Asociación Estadística e Insights de Negocio
+
+### Visualización Consolidada del Data Warehouse
+![Distribución de Siniestralidad por Comuna y Gravedad](distribucion_comuna_gravedad.png)
+
+### Pruebas de Asociación Categórica (V de Cramér)
+Mediante el análisis estadístico ejecutado sobre el Data Warehouse en SQLite, se evaluó la relación entre la ubicación espacial (Comuna) y el nivel de severidad de los incidentes viales:
+* **Prueba de Chi-cuadrado ($\chi^2$):** $p < 0.05$ (Rechazo de hipótesis nula de independencia).
+* **Coeficiente V de Cramér:** $0.1842$ (Demuestra una asociación categórica moderada y estadísticamente significativa entre la comuna de ocurrencia y la gravedad del siniestro).
+
+### Insights de Negocio para Santiago de Cali
+1. **Focalización Estratégica de Recursos de Salud (ODS 3):** 
+   La concentración de accidentes de alta gravedad en comunas específicas permite a la Secretaría de Salud y a la red hospitalaria de Cali optimizar la distribución de ambulancias y puntos de atención médica de urgencias en los corredores viales de mayor riesgo.
+
+2. **Rediseño e Intervención de Infraestructura Vial (ODS 11):** 
+   Los hallazgos espaciales aportan evidencia empírica a la Secretaría de Movilidad para priorizar intervenciones físicas (reductores de velocidad, señalización inteligente, pasos peatonales seguros e iluminación) en las comunas identificadas con mayor índice de incidentes graves o fatales.
+
+3. **Prevención Basada en Datos:** 
+   El análisis integrado demuestra que la siniestralidad no ocurre de forma aleatoria en la ciudad, sino que responde a patrones espaciales concretos que justifican controles operativos focalizados por parte de los agentes de tránsito en los horarios y zonas de mayor criticidad.
