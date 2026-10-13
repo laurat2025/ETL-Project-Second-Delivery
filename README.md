@@ -64,5 +64,5 @@ El pipeline implementa de forma automatizada **tres tareas distintas de extracci
 ### Pasos para Desplegar el Proyecto:
 
 1. **Clonar el repositorio y abrir la terminal en la raíz:**
-   https://github.com/laurat2025/ETL-Project-Second-Delivery/edit/main/README.md
+   https://github.com/laurat2025/ETL-Project-Second-Delivery.git
    
