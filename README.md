@@ -64,6 +64,5 @@ El pipeline implementa de forma automatizada **tres tareas distintas de extracci
 ### Pasos para Desplegar el Proyecto:
 
 1. **Clonar el repositorio y abrir la terminal en la raíz:**
-   ```bash
-   git clone [https://github.com/juanH40-ING/Delivery_2.git](https://github.com/juanH40-ING/Delivery_2.git)
-   cd Delivery_2
+   https://github.com/laurat2025/ETL-Project-Second-Delivery/edit/main/README.md
+   
