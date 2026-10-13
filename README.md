@@ -6,9 +6,10 @@ Repositorio oficial para la segunda entrega del curso de **ETL (G51)** del progr
 ---
 
 ## Equipo de Trabajo
-* **Laura Torres** – Arquitectura, Documentación y Coordinación
-* **Juliana Toro Serrano** – Análisis Exploratorio (EDA) y Validación Estadística
-* **Juan López** – Desarrollo ETL, Orquestación y Carga en Data Warehouse
+* **Laura Torres** 
+* **Juliana Toro Serrano** 
+* **Juan López** 
+* **Juan Carlos Hernandez**
 
 ---
 
