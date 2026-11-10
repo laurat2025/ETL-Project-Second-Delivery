@@ -10,7 +10,9 @@ from src.etl import (
     extraer_fuente_1_csv,
     extraer_fuente_2_api,
     extraer_fuente_3_csv_masivo,
-    ejecutar_pipeline_etl,
+    transformar_y_unificar_fuentes,
+    validar_calidad_airflow_task,
+    cargar_dw_sqlite,
 )
 
 default_args = {
@@ -24,13 +26,16 @@ with DAG(
     default_args=default_args,
     schedule='@daily',
     catchup=False,
-    description='Pipeline automatizado con 3 fuentes, Great Expectations y SQLite',
+    description='Pipeline ETL profesional con 3 fuentes, Great Expectations y SQLite',
 ) as dag:
 
     t1 = PythonOperator(task_id='extraer_fuente_1_csv_historico', python_callable=extraer_fuente_1_csv)
     t2 = PythonOperator(task_id='extraer_fuente_2_api_publica', python_callable=extraer_fuente_2_api)
     t3 = PythonOperator(task_id='extraer_fuente_3_csv_masivo', python_callable=extraer_fuente_3_csv_masivo)
     
-    t_transform_val_load = PythonOperator(task_id='transformar_validar_y_cargar_dw', python_callable=ejecutar_pipeline_etl)
+    t_transform = PythonOperator(task_id='transformar_y_unificar_fuentes', python_callable=transformar_y_unificar_fuentes)
+    t_validate = PythonOperator(task_id='validar_calidad_datos_ge', python_callable=validar_calidad_airflow_task)
+    t_load = PythonOperator(task_id='cargar_dw_sqlite', python_callable=cargar_dw_sqlite)
 
-    [t1, t2, t3] >> t_transform_val_load
+    # Flujo secuencial atómico sin monolitos ni tareas de adorno
+    [t1, t2, t3] >> t_transform >> t_validate >> t_load
