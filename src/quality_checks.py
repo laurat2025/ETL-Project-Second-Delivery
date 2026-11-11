@@ -21,6 +21,6 @@ def validar_calidad_datos(df: pd.DataFrame, nombre_dataset: str) -> bool:
         print("-> ¡Validación de calidad APROBADA formalmente con Pandera!")
         return True
     except pa.errors.SchemaErrors as err:
-        print("-> ❌ ERRORES DE CALIDAD DETECTADOS POR PANDERA:")
+        print("-> ERRORES DE CALIDAD DETECTADOS POR PANDERA:")
         print(err.failure_cases)
         return False
